@@ -44,8 +44,8 @@
         <div class="M">
             원의 넓이
             <br/>
-            <label for="radius">반지름</label>
-            <input type="number" id="radius">cm
+            <label for="radiusa">반지름</label>
+            <input type="number" id="radiusa">cm
             <br/>
             <input id="result" type="button" value="계산하기" onClick="CircleArea()">
             <br/>   
@@ -53,10 +53,10 @@
         <div class="M">
             원의 둘레
             <br/>
-            <label for="radius">반지름</label>
-            <input type="number" id="radius">cm
+            <label for="radiusl">반지름</label>
+            <input type="number" id="radiusl">cm
             <br/>
-            <input id="result" type="button" value="계산하기" onClick="Circleline   ()">
+            <input id="result" type="button" value="계산하기" onClick="Circleline()">
             <br/>
 
         </div>
@@ -68,7 +68,7 @@
     <script>
         
         function CircleArea( ) {
-            let r = document.querySelector('#radius').value;
+            let r = document.querySelector('#radiusa').value;
                 r = Number(r);
             
             let area = r * r;
@@ -77,7 +77,7 @@
         }
 
         function Circleline() {
-            let r = document.querySelector('#radius').value;
+            let r = document.querySelector('#radiusl').value;
             r = Number(r);
 
             let line = 2 * r;
