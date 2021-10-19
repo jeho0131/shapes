@@ -7,18 +7,37 @@
     <title>Document</title>
 
     <style>
-        .B {
+        .C {
             background-color: red;
-            width: 400px;
+            width: 225px;
             height: 100%;
             margin:10px;
             position:relative;
+            float:left;
         }
 
-        .M {
-            background-color: gray;
-            width: 300px;
+        .P {
+            background-color: blue;
+            width: 225px;
             height: 100%;
+            margin:10px;
+            position:relative;
+            float:left;
+        }
+
+        .T {
+            background-color: yellow;
+            width: 225px;
+            height: 100%;
+            margin:10px;
+            position:relative;
+            float:left;
+        }
+
+        .box {
+            background-color: gray;
+            width: 200px;
+            height: 85%;
             margin:10px;
             position:relative;
         }
@@ -38,30 +57,104 @@
     </style>   
 </head>
 <body>
-    <div class="B">
+    <div class="C">
         원
         <br/>
-        <div class="M">
+        <div class="box">
             원의 넓이
             <br/>
             <label for="radiusa">반지름</label>
             <input type="number" id="radiusa">cm
             <br/>
+
             <input id="result" type="button" value="계산하기" onClick="CircleArea()">
             <br/>   
         </div>
-        <div class="M">
+        <div class="box">
             원의 둘레
             <br/>
             <label for="radiusl">반지름</label>
             <input type="number" id="radiusl">cm
             <br/>
-            <input id="result" type="button" value="계산하기" onClick="Circleline()">
+
+            <input id="result" type="button" value="계산하기" onClick="Circlelen()">
             <br/>
 
         </div>
         <br/>
         
+    </div>
+
+    <div class="P">
+        다각형
+        <br/>
+        <div class="box">
+            삼각형의 넓이
+            <br/>
+            <label for="linelent">밑변</label>
+            <input type="number" id="linelent">cm
+            <br/>
+            <label for="hight">높이</label>
+            <input type="number" id="hight">cm
+            <br/>
+
+            <input id="result" type="button" value="계산하기" onClick="TriangleArea()">
+            <br/>
+            
+        </div>
+        <div class="box">
+            직사각형의 넓이
+            <br/>
+            <label for="linelenh">가로</label>
+            <input type="number" id="linelenh">cm
+            <br/>
+            <label for="linelenv">세로</label>
+            <input type="number" id="linelenv">cm
+            <br/>
+
+            <input id="result" type="button" value="계산하기" onClick="RectArea()">
+            <br/>
+
+        </div>
+        <div class="box">
+            사다리꼴의 넓이
+            <br/>
+            <label for="uplinelen">윗변</label>
+            <input type="number" id="uplinelen">cm
+            <br/>
+            <label for="downlinelen">아랫변</label>
+            <input type="number" id="downlinelen">cm
+            <br/>
+            <label for="hightz">높이</label>
+            <input type="number" id="hightz">cm
+            <br/>
+
+            <input id="result" type="button" value="계산하기" onClick="TrapezoidArea()">
+            <br/>
+
+        </div>
+
+        <div class="box">
+            내각의 합
+            <br/>
+            <label for="pointnum">꼭짓점</label>
+            <input type="number" id="pointnum" min="3">개
+            <br/>
+            <input id="result" type="button" value="계산하기" onClick="AddAngle()">
+            <br/>
+            
+        </div>
+        
+        <br/>
+
+    </div>
+
+    <div class="T">
+        입체도형
+        <br/>
+        <div class="box">
+
+        </div>
     </div>
     
 
@@ -73,16 +166,60 @@
             
             let area = r * r;
             
-            alert("원의 넓이 : " + String(area) + "π");
+            alert("원의 넓이 : " + String(area) + "π㎠");
         }
 
-        function Circleline() {
+        function Circlelen() {
             let r = document.querySelector('#radiusl').value;
             r = Number(r);
 
             let line = 2 * r;
 
-            alert("원의 둘레 : " + String(line) + "π");
+            alert("원의 둘레 : " + String(line) + "π㎝");
+        }
+
+        function RectArea() {
+            let h = document.querySelector('#linelenh').value;
+                h = Number(h);
+            let v = document.querySelector('#linelenv').value;
+                v = Number(v);
+            
+            let area = h * v;
+
+            alert("사각형의 넓이 : " + String(area) + "㎠");
+        }
+
+        function TriangleArea() {
+            let l = document.querySelector('#linelent').value;
+                l = Number(l);
+            let h = document.querySelector('#hight').value;
+                h = Number(h);
+            
+            let area = l * h / 2;
+
+            alert("삼각형의 넓이 : " + String(area) + "㎠");
+        }
+
+        function TrapezoidArea() {
+            let u = document.querySelector('#uplinelen').value;
+                u = Number(u);
+            let d = document.querySelector('#downlinelen').value;
+                d = Number(d);
+            let h = document.querySelector('#hightz').value;
+                h = Number(h);
+            
+            let area = (u+d) * h / 2;
+
+            alert("사다리꼴의 넓이 : " + String(area) + "㎠");
+        }
+
+        function AddAngle() {
+            let n = document.querySelector('#pointnum').value;
+                n = Number(n);
+            
+            let add = (n-2) * 180;
+
+            alert("내각의 합 : " + String(add) + "˚")
         }
 
     </script>
