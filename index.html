@@ -38,7 +38,7 @@
             background-color: gray;
             width: 200px;
             height: 85%;
-            margin:10px;
+            margin:15px;
             position:relative;
         }
 
@@ -50,7 +50,7 @@
             position:relative;
         }
 
-        #result {
+        #result {                                       
             left:1px;
         }
 
@@ -58,7 +58,7 @@
 </head>
 <body>
     <div class="C">
-        원
+        원 & 구
         <br/>
         <div class="box">
             원의 넓이
@@ -70,6 +70,7 @@
             <input id="result" type="button" value="계산하기" onClick="CircleArea()">
             <br/>   
         </div>
+
         <div class="box">
             원의 둘레
             <br/>
@@ -80,6 +81,56 @@
             <input id="result" type="button" value="계산하기" onClick="Circlelen()">
             <br/>
 
+        </div>
+
+        <div class="box">
+            부채꼴의 넓이
+            <br/>
+            <label for="radiussfa">반지름</label>
+            <input type="number" id="radiussfa">cm
+            <br/>
+            <label for="cenanglea">중심각</label>
+            <input type="number" id="cenanglea">˚
+
+            <input id="result" type="button" value="계산하기" onClick="SFormArea()">
+            <br/>
+
+        </div>
+
+        <div class="box">
+            부채꼴 호의 길이
+            <br/>
+            <label for="radiussfl">반지름</label>
+            <input type="number" id="radiussfl">cm
+            <br/>
+            <label for="cenanglel">중심각</label>
+            <input type="number" id="cenanglel">˚
+
+            <input id="result" type="button" value="계산하기" onClick="ArcLen()">
+            <br/>
+
+        </div>
+
+        <div class="box">
+            구의 부피
+            <br/>
+            <label for="radiussv">반지름</label>
+            <input type="number" id="radiussv">cm
+            <br/>
+
+            <input id="result" type="button" value="계산하기" onClick="SphereVolume()">
+            <br/>   
+        </div>
+
+        <div class="box">
+            구의 겉넓이
+            <br/>
+            <label for="radiussa">반지름</label>
+            <input type="number" id="radiussa">cm
+            <br/>
+
+            <input id="result" type="button" value="계산하기" onClick="SphereSurfaceArea()">
+            <br/>   
         </div>
         <br/>
         
@@ -102,6 +153,7 @@
             <br/>
             
         </div>
+
         <div class="box">
             직사각형의 넓이
             <br/>
@@ -116,6 +168,7 @@
             <br/>
 
         </div>
+
         <div class="box">
             사다리꼴의 넓이
             <br/>
@@ -153,7 +206,63 @@
         입체도형
         <br/>
         <div class="box">
+            삼각기둥의 부피
+            <br/>
+            &nbsp; 밑면
+            <br>
+            <label for="downlinet">밑변</label>
+            <input type="number" id="downlinet">cm
+            <br/>
+            <label for="downhight">높이</label>
+            <input type="number" id="downhight">cm
+            <br/>
+            &nbsp; 기둥
+            <br/>
+            <label for="hightt">높이</label>
+            <input type="number" id="hightt">cm
+            <br/>
 
+            <input id="result" type="button" value="계산하기" onClick="TPoleVolume()">
+            <br/>
+        </div>
+
+        <div class="box">
+            사각기둥의 부피
+            <br/>
+            &nbsp; 밑면
+            <br>
+            <label for="downlinelenh">가로</label>
+            <input type="number" id="downlinelenh">cm
+            <br/>
+            <label for="downlinelenv">세로</label>
+            <input type="number" id="downlinelenv">cm
+            <br/>
+            &nbsp; 기둥
+            <br/>
+            <label for="highrt">높이</label>
+            <input type="number" id="highrt">cm
+            <br/>
+
+            <input id="result" type="button" value="계산하기" onClick="SPoleVolume()">
+            <br/>
+        </div>
+
+        <div class="box">
+            원기둥의 부피
+            <br/>
+            &nbsp; 밑면
+            <br>
+            <label for="downradius">반지름</label>
+            <input type="number" id="downradius">cm
+            <br/>
+            &nbsp; 기둥
+            <br/>
+            <label for="highct">높이</label>
+            <input type="number" id="highct">cm
+            <br/>
+
+            <input id="result" type="button" value="계산하기" onClick="CylinderVolume()">
+            <br/>
         </div>
     </div>
     
@@ -176,6 +285,46 @@
             let line = 2 * r;
 
             alert("원의 둘레 : " + String(line) + "π㎝");
+        }
+
+        function SFormArea() {
+            let r = document.querySelector('#radiussfa').value;
+                r = Number(r);
+            let a = document.querySelector('#cenanglea').value;
+                a = Number(a);
+            
+            let area = r * r * (a / 360);
+
+            alert("부채꼴의 넓이 : " + String(area) + "π㎠");
+        }
+
+        function ArcLen() {
+            let r = document.querySelector('#radiussfl').value;
+                r = Number(r);
+            let a = document.querySelector('#cenanglel').value;
+                a = Number(a);
+            
+            let area = 2 * r * (a / 360);
+
+            alert("호의 길이 : " + String(area) + "π㎝");
+        }
+
+        function SphereVolume() {
+            let r = document.querySelector('#radiussv').value;
+                r = Number(r);
+            
+            let v = (3 / 4) * r * r * r;
+
+            alert("구의 부피 : " + String(v) + "π㎤");
+        }
+
+        function SphereSurfaceArea() {
+            let r = document.querySelector('#radiussa').value;
+                r = Number(r);
+            
+            let v = 4 * r * r;
+
+            alert("구의 겉넓이 : " + String(v) + "π㎠");
         }
 
         function RectArea() {
@@ -219,7 +368,44 @@
             
             let add = (n-2) * 180;
 
-            alert("내각의 합 : " + String(add) + "˚")
+            alert("내각의 합 : " + String(add) + "˚");
+        }
+
+        function TPoleVolume() {
+            let dl = document.querySelector('#downlinet').value;
+                dl = Number(dl);
+            let dh = document.querySelector('#downhight').value;
+                dh = Number(dh);
+            let h = document.querySelector('#hightt').value;
+                h = Number(h);
+
+            let v = (dl * dh) / 2 * h;
+
+            alert("삼각기둥의 부피 : " + String(v) + "㎤");
+        }
+
+        function SPoleVolume() {
+            let dh = document.querySelector('#downlinelenh').value;
+                dh = Number(dh);
+            let dv = document.querySelector('#downlinelenv').value;
+                dv = Number(dv);
+            let h = document.querySelector('#highrt').value;
+                h = Number(h); 
+
+            let v = (dh * dv) * h;
+
+            alert("사각기둥의 부피 : " + String(v) + "㎤");
+        }
+
+        function CylinderVolume() {
+            let r = document.querySelector('#downradius').value;
+                r = Number(r);
+            let h = document.querySelector('#highct').value;
+                h = Number(h);
+
+            let v = r * r * h;
+
+            alert("원기둥의 부피 : " + String(v) + "π㎤")
         }
 
     </script>
