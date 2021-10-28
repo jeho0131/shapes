@@ -63,6 +63,7 @@
         <br/>
         <div class="box">
             <div title="πr²">원의 넓이</div>
+
             <label for="radiusa">반지름</label>
             <input type="number" id="radiusa">cm
             <br/>
@@ -73,6 +74,7 @@
 
         <div class="box">
             <div title="2πr">원의 둘레</div>
+
             <label for="radiusl">반지름</label>
             <input type="number" id="radiusl">cm
             <br/>
@@ -83,7 +85,8 @@
         </div>
 
         <div class="box">
-            <div title="πr² x (중심각 / 360)">부채꼴의 넓이</div>
+            <div title="πr² x (중심각 ÷ 360)">부채꼴의 넓이</div>
+
             <label for="radiussfa">반지름</label>
             <input type="number" id="radiussfa">cm
             <br/>
@@ -96,7 +99,8 @@
         </div>
 
         <div class="box">
-            <div title="2πr x (중심각 / 360)">부채꼴 호의 길이</div>
+            <div title="2πr x (중심각 ÷ 360)">부채꼴 호의 길이</div>
+
             <label for="radiussfl">반지름</label>
             <input type="number" id="radiussfl">cm
             <br/>
@@ -109,8 +113,8 @@
         </div>
 
         <div class="box">
-            구의 부피
-            <br/>
+            <div title="(4÷3)πr³">구의 부피</div>
+
             <label for="radiussv">반지름</label>
             <input type="number" id="radiussv">cm
             <br/>
@@ -120,8 +124,8 @@
         </div>
 
         <div class="box">
-            구의 겉넓이
-            <br/>
+            <div title="4πr²">구의 겉넓이</div>
+
             <label for="radiussa">반지름</label>
             <input type="number" id="radiussa">cm
             <br/>
@@ -137,8 +141,8 @@
         다각형
         <br/>
         <div class="box">
-            삼각형의 넓이
-            <br/>
+            <div title="밑변 x 높이 ÷ 2">삼각형의 넓이</div>
+            
             <label for="linelent">밑변</label>
             <input type="number" id="linelent">cm
             <br/>
@@ -152,8 +156,8 @@
         </div>
 
         <div class="box">
-            직사각형의 넓이
-            <br/>
+            <div title="가로 x 세로">직사각형의 넓이</div>
+            
             <label for="linelenh">가로</label>
             <input type="number" id="linelenh">cm
             <br/>
@@ -167,8 +171,8 @@
         </div>
 
         <div class="box">
-            사다리꼴의 넓이
-            <br/>
+            <div title="(윗변 + 아랫변) x 높이 ÷ 2">사다리꼴의 넓이</div>
+            
             <label for="uplinelen">윗변</label>
             <input type="number" id="uplinelen">cm
             <br/>
@@ -185,8 +189,8 @@
         </div>
 
         <div class="box">
-            내각의 합
-            <br/>
+            <div title="(n-3) x 180">내각의 합</div>
+            
             <label for="pointnum">?각형</label>
             <input type="number" id="pointnum" min="3">각형
             <br/>
@@ -203,8 +207,8 @@
         입체도형
         <br/>
         <div class="box">
-            삼각기둥의 부피
-            <br/>
+            <div title="(밑면의 밑변 x 밑면의 높이 ÷ 2) x 높이">삼각기둥의 부피</div>
+            
             &nbsp; 밑면
             <br>
             <label for="downlinet">밑변</label>
@@ -224,8 +228,8 @@
         </div>
 
         <div class="box">
-            사각기둥의 부피
-            <br/>
+            <div title="가로 x 세로 x 높이">사각기둥의 부피</div>
+            
             &nbsp; 밑면(직사각형)
             <br>
             <label for="downlinelenh">가로</label>
@@ -245,8 +249,8 @@
         </div>
 
         <div class="box">
-            삼각뿔의 부피
-            <br/>
+            <div title="(밑면의 밑변 x 밑면의 높이 ÷ 2) x 높이 ÷ 3">삼각뿔의 부피</div>
+            
             &nbsp; 밑면
             <br>
             <label for="downlinetp">밑변</label>
@@ -266,8 +270,8 @@
         </div>
 
         <div class="box">
-            사각뿔의 부피
-            <br/>
+            <div title="가로 x 세로 x 높이 ÷ 3">사각뿔의 부피</div>
+
             &nbsp; 밑면(직사각형)
             <br>
             <label for="downlinelenhp">가로</label>
@@ -287,8 +291,8 @@
         </div>
         
         <div class="box">
-            원기둥의 부피
-            <br/>
+            <div title="πr² x 높이">원기둥의 부피</div>
+            
             &nbsp; 밑면
             <br>
             <label for="downradius">반지름</label>
@@ -305,8 +309,8 @@
         </div>
 
         <div class="box">
-            원뿔의 부피
-            <br/>
+            <div title="πr² x 높이 ÷ 3">원뿔의 부피</div>
+            
             &nbsp; 밑면
             <br>
             <label for="downradiusc">반지름</label>
@@ -323,14 +327,14 @@
         </div>
 
         <div class="box">
-            원뿔의 겉넓이(반지름)
-            <br/>
+            <div title="(1÷2) x R(호의 반지름) x 2πr + πr²">원뿔의 겉넓이(반지름)</div>
+            
             &nbsp; 밑면
             <br>
             <label for="downradiuscsr">반지름</label>
             <input type="number" id="downradiuscsr">cm
             <br/>
-            &nbsp; 뿔(전개도)
+            &nbsp; 호(원뿔의 전개도)
             <br/>
             <label for="sformradius">반지름</label>
             <input type="number" id="sformradius">cm
@@ -341,14 +345,14 @@
         </div>
 
         <div class="box">
-            원뿔의 겉넓이(중심각)
-            <br/>
+            <div title="(r ÷ (각도 ÷ 360))² x π x (각도 ÷ 360) + πr²">원뿔의 겉넓이(중심각)</div> 
+            
             &nbsp; 밑면
             <br>
             <label for="downradiuscsa">반지름</label>
             <input type="number" id="downradiuscsa">cm
             <br/>
-            &nbsp; 뿔(전개도)
+            &nbsp; 호(원뿔의 전개도)
             <br/>
             <label for="conearc">중심각</label>
             <input type="number" id="conearc">˚
