@@ -9,12 +9,13 @@
     <style>
         .container {
             display:grid;
-            
+            grid-template-columns: repeat(2, 460px);
+            grid-template-rows: repeat(2, minmax(100px, auto));
+            row-gap: 20px;
         }
 
         .C {
             background-color: red;
-            width: 440px;
             height: 100%;
             margin:10px;
             position:relative;
@@ -23,7 +24,6 @@
 
         .P {
             background-color: blue;
-            width: 440px;
             height: 100%;
             margin:10px;
             position:relative;
@@ -33,8 +33,9 @@
 
         .T {
             background-color: yellow;
-            width: 440px;
             height: 100%;
+            grid-column: 2/3;
+            grid-row: 1/3;
             margin:10px;
             position:relative;
             float:left;
@@ -44,7 +45,7 @@
             background-color: gray;
             width: 200px;
             float:left;
-            height: 85%;
+            height: auto;
             margin:10px;
             position:relative;
         }
@@ -65,311 +66,314 @@
     </style>   
 </head>
 <body>
-    <div class="C">
-        원 & 구
-        <br/>
-        <div class="box">
-            <div title="πr²">원의 넓이</div>
-
-            <label for="radiusa">반지름</label>
-            <input type="number" id="radiusa">cm
+    <div class="container">
+        <div class="C">
+            원 & 구
             <br/>
+            <div class="box">
+                <div title="πr²">원의 넓이</div>
 
-            <input id="result" type="button" value="계산하기" onClick="CircleArea()">
-            <br/>   
+                <label for="radiusa">반지름</label>
+                <input type="number" id="radiusa">cm
+                <br/>
+
+                <input id="result" type="button" value="계산하기" onClick="CircleArea()">
+                <br/>   
+            </div>
+
+            <div class="box">
+                <div title="2πr">원의 둘레</div>
+
+                <label for="radiusl">반지름</label>
+                <input type="number" id="radiusl">cm
+                <br/>
+
+                <input id="result" type="button" value="계산하기" onClick="Circlelen()">
+                <br/>
+
+            </div>
+
+            <div class="box">
+                <div title="πr² x (중심각 ÷ 360)">부채꼴의 넓이</div>
+
+                <label for="radiussfa">반지름</label>
+                <input type="number" id="radiussfa">cm
+                <br/>
+                <label for="cenanglea">중심각</label>
+                <input type="number" id="cenanglea">˚
+
+                <input id="result" type="button" value="계산하기" onClick="SFormArea()">
+                <br/>
+
+            </div>
+
+            <div class="box">
+                <div title="2πr x (중심각 ÷ 360)">부채꼴 호의 길이</div>
+
+                <label for="radiussfl">반지름</label>
+                <input type="number" id="radiussfl">cm
+                <br/>
+                <label for="cenanglel">중심각</label>
+                <input type="number" id="cenanglel">˚
+
+                <input id="result" type="button" value="계산하기" onClick="ArcLen()">
+                <br/>
+
+            </div>
+
+            <div class="box">
+                <div title="(4÷3)πr³">구의 부피</div>
+
+                <label for="radiussv">반지름</label>
+                <input type="number" id="radiussv">cm
+                <br/>
+
+                <input id="result" type="button" value="계산하기" onClick="SphereVolume()">
+                <br/>   
+            </div>
+
+            <div class="box">
+                <div title="4πr²">구의 겉넓이</div>
+
+                <label for="radiussa">반지름</label>
+                <input type="number" id="radiussa">cm
+                <br/>
+
+                <input id="result" type="button" value="계산하기" onClick="SphereSurfaceArea()">
+                <br/>   
+            </div>
+            <br/>
+            
         </div>
 
-        <div class="box">
-            <div title="2πr">원의 둘레</div>
-
-            <label for="radiusl">반지름</label>
-            <input type="number" id="radiusl">cm
-            <br/>
-
-            <input id="result" type="button" value="계산하기" onClick="Circlelen()">
-            <br/>
-
-        </div>
-
-        <div class="box">
-            <div title="πr² x (중심각 ÷ 360)">부채꼴의 넓이</div>
-
-            <label for="radiussfa">반지름</label>
-            <input type="number" id="radiussfa">cm
-            <br/>
-            <label for="cenanglea">중심각</label>
-            <input type="number" id="cenanglea">˚
-
-            <input id="result" type="button" value="계산하기" onClick="SFormArea()">
-            <br/>
-
-        </div>
-
-        <div class="box">
-            <div title="2πr x (중심각 ÷ 360)">부채꼴 호의 길이</div>
-
-            <label for="radiussfl">반지름</label>
-            <input type="number" id="radiussfl">cm
-            <br/>
-            <label for="cenanglel">중심각</label>
-            <input type="number" id="cenanglel">˚
-
-            <input id="result" type="button" value="계산하기" onClick="ArcLen()">
-            <br/>
-
-        </div>
-
-        <div class="box">
-            <div title="(4÷3)πr³">구의 부피</div>
-
-            <label for="radiussv">반지름</label>
-            <input type="number" id="radiussv">cm
-            <br/>
-
-            <input id="result" type="button" value="계산하기" onClick="SphereVolume()">
-            <br/>   
-        </div>
-
-        <div class="box">
-            <div title="4πr²">구의 겉넓이</div>
-
-            <label for="radiussa">반지름</label>
-            <input type="number" id="radiussa">cm
-            <br/>
-
-            <input id="result" type="button" value="계산하기" onClick="SphereSurfaceArea()">
-            <br/>   
-        </div>
-        <br/>
         
+
+        <div class="T">
+            입체도형
+            <br/>
+            <div class="box">
+                <div title="(밑면의 밑변 x 밑면의 높이 ÷ 2) x 높이">삼각기둥의 부피</div>
+                
+                &nbsp; 밑면
+                <br>
+                <label for="downlinet">밑변</label>
+                <input type="number" id="downlinet">cm
+                <br/>
+                <label for="downhight">높이</label>
+                <input type="number" id="downhight">cm
+                <br/>
+                &nbsp; 기둥
+                <br/>
+                <label for="hightt">높이</label>
+                <input type="number" id="hightt">cm
+                <br/>
+
+                <input id="result" type="button" value="계산하기" onClick="TPoleVolume()">
+                <br/>
+            </div>
+
+            <div class="box">
+                <div title="가로 x 세로 x 높이">사각기둥의 부피</div>
+                
+                &nbsp; 밑면(직사각형)
+                <br>
+                <label for="downlinelenh">가로</label>
+                <input type="number" id="downlinelenh">cm
+                <br/>
+                <label for="downlinelenv">세로</label>
+                <input type="number" id="downlinelenv">cm
+                <br/>
+                &nbsp; 기둥
+                <br/>
+                <label for="highrt">높이</label>
+                <input type="number" id="highrt">cm
+                <br/>
+
+                <input id="result" type="button" value="계산하기" onClick="SPoleVolume()">
+                <br/>
+            </div>
+
+            <div class="box">
+                <div title="(밑면의 밑변 x 밑면의 높이 ÷ 2) x 높이 ÷ 3">삼각뿔의 부피</div>
+                
+                &nbsp; 밑면
+                <br>
+                <label for="downlinetp">밑변</label>
+                <input type="number" id="downlinetp">cm
+                <br/>
+                <label for="downhightp">높이</label>
+                <input type="number" id="downhightp">cm
+                <br/>
+                &nbsp; 뿔
+                <br/>
+                <label for="highttp">높이</label>
+                <input type="number" id="highttp">cm
+                <br/>
+
+                <input id="result" type="button" value="계산하기" onClick="TPyramidVolume()">
+                <br/>
+            </div>
+
+            <div class="box">
+                <div title="가로 x 세로 x 높이 ÷ 3">사각뿔의 부피</div>
+
+                &nbsp; 밑면(직사각형)
+                <br>
+                <label for="downlinelenhp">가로</label>
+                <input type="number" id="downlinelenhp">cm
+                <br/>
+                <label for="downlinelenvp">세로</label>
+                <input type="number" id="downlinelenvp">cm
+                <br/>
+                &nbsp; 뿔
+                <br/>
+                <label for="highrtp">높이</label>
+                <input type="number" id="highrtp">cm
+                <br/>
+
+                <input id="result" type="button" value="계산하기" onClick="QpyramidVolume()">
+                <br/>
+            </div>
+            
+            <div class="box">
+                <div title="πr² x 높이">원기둥의 부피</div>
+                
+                &nbsp; 밑면
+                <br>
+                <label for="downradius">반지름</label>
+                <input type="number" id="downradius">cm
+                <br/>
+                &nbsp; 기둥
+                <br/>
+                <label for="highct">높이</label>
+                <input type="number" id="highct">cm
+                <br/>
+
+                <input id="result" type="button" value="계산하기" onClick="CylinderVolume()">
+                <br/>
+            </div>
+
+            <div class="box">
+                <div title="πr² x 높이 ÷ 3">원뿔의 부피</div>
+                
+                &nbsp; 밑면
+                <br>
+                <label for="downradiusc">반지름</label>
+                <input type="number" id="downradiusc">cm
+                <br/>
+                &nbsp; 뿔
+                <br/>
+                <label for="highctc">높이</label>
+                <input type="number" id="highctc">cm
+                <br/>
+
+                <input id="result" type="button" value="계산하기" onClick="ConeVolume()">
+                <br/>
+            </div>
+
+            <div class="box">
+                <div title="(1÷2) x R(호의 반지름) x 2πr + πr²">원뿔의 겉넓이(반지름)</div>
+                
+                &nbsp; 밑면
+                <br>
+                <label for="downradiuscsr">반지름</label>
+                <input type="number" id="downradiuscsr">cm
+                <br/>
+                &nbsp; 호(원뿔의 전개도)
+                <br/>
+                <label for="sformradius">반지름</label>
+                <input type="number" id="sformradius">cm
+                <br/>
+
+                <input id="result" type="button" value="계산하기" onClick="ConeSurfaceAreaR()">
+                <br/>
+            </div>
+
+            <div class="box">
+                <div title="(r ÷ (각도 ÷ 360))² x π x (각도 ÷ 360) + πr²">원뿔의 겉넓이(중심각)</div> 
+                
+                &nbsp; 밑면
+                <br>
+                <label for="downradiuscsa">반지름</label>
+                <input type="number" id="downradiuscsa">cm
+                <br/>
+                &nbsp; 호(원뿔의 전개도)
+                <br/>
+                <label for="conearc">중심각</label>
+                <input type="number" id="conearc">˚
+                <br/>
+
+                <input id="result" type="button" value="계산하기" onClick="ConeSurfaceAreaA()">
+                <br/>
+            </div>
+        </div>
+                
+        <div class="P">
+            다각형
+            <br/>
+            <div class="box">
+                <div title="밑변 x 높이 ÷ 2">삼각형의 넓이</div>
+                    
+                <label for="linelent">밑변</label>
+                <input type="number" id="linelent">cm
+                <br/>
+                <label for="hight">높이</label>
+                <input type="number" id="hight">cm
+                <br/>
+
+                <input id="result" type="button" value="계산하기" onClick="TriangleArea()">
+                <br/>
+                    
+            </div>
+
+            <div class="box">
+                <div title="가로 x 세로">직사각형의 넓이</div>
+                    
+                <label for="linelenh">가로</label>
+                <input type="number" id="linelenh">cm
+                <br/>
+                <label for="linelenv">세로</label>
+                <input type="number" id="linelenv">cm
+                <br/>
+
+                <input id="result" type="button" value="계산하기" onClick="RectArea()">
+                <br/>
+
+            </div>
+
+            <div class="box">
+                <div title="(윗변 + 아랫변) x 높이 ÷ 2">사다리꼴의 넓이</div>
+                    
+                <label for="uplinelen">윗변</label>
+                <input type="number" id="uplinelen">cm
+                <br/>
+                <label for="downlinelen">아랫변</label>
+                <input type="number" id="downlinelen">cm
+                <br/>
+                <label for="hightz">높이</label>
+                <input type="number" id="hightz">cm
+                <br/>
+
+                <input id="result" type="button" value="계산하기" onClick="TrapezoidArea()">
+                <br/>
+
+            </div>
+
+            <div class="box">
+                <div title="(n-3) x 180">내각의 합</div>
+                    
+                <label for="pointnum">?각형</label>
+                <input type="number" id="pointnum" min="3">각형
+                <br/>
+                <input id="result" type="button" value="계산하기" onClick="AddAngle()">
+                <br/>
+                    
+            </div>
+                
+            <br/>
+
+        </div>
     </div>
-
-    <div class="P">
-        다각형
-        <br/>
-        <div class="box">
-            <div title="밑변 x 높이 ÷ 2">삼각형의 넓이</div>
-            
-            <label for="linelent">밑변</label>
-            <input type="number" id="linelent">cm
-            <br/>
-            <label for="hight">높이</label>
-            <input type="number" id="hight">cm
-            <br/>
-
-            <input id="result" type="button" value="계산하기" onClick="TriangleArea()">
-            <br/>
-            
-        </div>
-
-        <div class="box">
-            <div title="가로 x 세로">직사각형의 넓이</div>
-            
-            <label for="linelenh">가로</label>
-            <input type="number" id="linelenh">cm
-            <br/>
-            <label for="linelenv">세로</label>
-            <input type="number" id="linelenv">cm
-            <br/>
-
-            <input id="result" type="button" value="계산하기" onClick="RectArea()">
-            <br/>
-
-        </div>
-
-        <div class="box">
-            <div title="(윗변 + 아랫변) x 높이 ÷ 2">사다리꼴의 넓이</div>
-            
-            <label for="uplinelen">윗변</label>
-            <input type="number" id="uplinelen">cm
-            <br/>
-            <label for="downlinelen">아랫변</label>
-            <input type="number" id="downlinelen">cm
-            <br/>
-            <label for="hightz">높이</label>
-            <input type="number" id="hightz">cm
-            <br/>
-
-            <input id="result" type="button" value="계산하기" onClick="TrapezoidArea()">
-            <br/>
-
-        </div>
-
-        <div class="box">
-            <div title="(n-3) x 180">내각의 합</div>
-            
-            <label for="pointnum">?각형</label>
-            <input type="number" id="pointnum" min="3">각형
-            <br/>
-            <input id="result" type="button" value="계산하기" onClick="AddAngle()">
-            <br/>
-            
-        </div>
-        
-        <br/>
-
-    </div>
-
-    <div class="T">
-        입체도형
-        <br/>
-        <div class="box">
-            <div title="(밑면의 밑변 x 밑면의 높이 ÷ 2) x 높이">삼각기둥의 부피</div>
-            
-            &nbsp; 밑면
-            <br>
-            <label for="downlinet">밑변</label>
-            <input type="number" id="downlinet">cm
-            <br/>
-            <label for="downhight">높이</label>
-            <input type="number" id="downhight">cm
-            <br/>
-            &nbsp; 기둥
-            <br/>
-            <label for="hightt">높이</label>
-            <input type="number" id="hightt">cm
-            <br/>
-
-            <input id="result" type="button" value="계산하기" onClick="TPoleVolume()">
-            <br/>
-        </div>
-
-        <div class="box">
-            <div title="가로 x 세로 x 높이">사각기둥의 부피</div>
-            
-            &nbsp; 밑면(직사각형)
-            <br>
-            <label for="downlinelenh">가로</label>
-            <input type="number" id="downlinelenh">cm
-            <br/>
-            <label for="downlinelenv">세로</label>
-            <input type="number" id="downlinelenv">cm
-            <br/>
-            &nbsp; 기둥
-            <br/>
-            <label for="highrt">높이</label>
-            <input type="number" id="highrt">cm
-            <br/>
-
-            <input id="result" type="button" value="계산하기" onClick="SPoleVolume()">
-            <br/>
-        </div>
-
-        <div class="box">
-            <div title="(밑면의 밑변 x 밑면의 높이 ÷ 2) x 높이 ÷ 3">삼각뿔의 부피</div>
-            
-            &nbsp; 밑면
-            <br>
-            <label for="downlinetp">밑변</label>
-            <input type="number" id="downlinetp">cm
-            <br/>
-            <label for="downhightp">높이</label>
-            <input type="number" id="downhightp">cm
-            <br/>
-            &nbsp; 뿔
-            <br/>
-            <label for="highttp">높이</label>
-            <input type="number" id="highttp">cm
-            <br/>
-
-            <input id="result" type="button" value="계산하기" onClick="TPyramidVolume()">
-            <br/>
-        </div>
-
-        <div class="box">
-            <div title="가로 x 세로 x 높이 ÷ 3">사각뿔의 부피</div>
-
-            &nbsp; 밑면(직사각형)
-            <br>
-            <label for="downlinelenhp">가로</label>
-            <input type="number" id="downlinelenhp">cm
-            <br/>
-            <label for="downlinelenvp">세로</label>
-            <input type="number" id="downlinelenvp">cm
-            <br/>
-            &nbsp; 뿔
-            <br/>
-            <label for="highrtp">높이</label>
-            <input type="number" id="highrtp">cm
-            <br/>
-
-            <input id="result" type="button" value="계산하기" onClick="QpyramidVolume()">
-            <br/>
-        </div>
-        
-        <div class="box">
-            <div title="πr² x 높이">원기둥의 부피</div>
-            
-            &nbsp; 밑면
-            <br>
-            <label for="downradius">반지름</label>
-            <input type="number" id="downradius">cm
-            <br/>
-            &nbsp; 기둥
-            <br/>
-            <label for="highct">높이</label>
-            <input type="number" id="highct">cm
-            <br/>
-
-            <input id="result" type="button" value="계산하기" onClick="CylinderVolume()">
-            <br/>
-        </div>
-
-        <div class="box">
-            <div title="πr² x 높이 ÷ 3">원뿔의 부피</div>
-            
-            &nbsp; 밑면
-            <br>
-            <label for="downradiusc">반지름</label>
-            <input type="number" id="downradiusc">cm
-            <br/>
-            &nbsp; 뿔
-            <br/>
-            <label for="highctc">높이</label>
-            <input type="number" id="highctc">cm
-            <br/>
-
-            <input id="result" type="button" value="계산하기" onClick="ConeVolume()">
-            <br/>
-        </div>
-
-        <div class="box">
-            <div title="(1÷2) x R(호의 반지름) x 2πr + πr²">원뿔의 겉넓이(반지름)</div>
-            
-            &nbsp; 밑면
-            <br>
-            <label for="downradiuscsr">반지름</label>
-            <input type="number" id="downradiuscsr">cm
-            <br/>
-            &nbsp; 호(원뿔의 전개도)
-            <br/>
-            <label for="sformradius">반지름</label>
-            <input type="number" id="sformradius">cm
-            <br/>
-
-            <input id="result" type="button" value="계산하기" onClick="ConeSurfaceAreaR()">
-            <br/>
-        </div>
-
-        <div class="box">
-            <div title="(r ÷ (각도 ÷ 360))² x π x (각도 ÷ 360) + πr²">원뿔의 겉넓이(중심각)</div> 
-            
-            &nbsp; 밑면
-            <br>
-            <label for="downradiuscsa">반지름</label>
-            <input type="number" id="downradiuscsa">cm
-            <br/>
-            &nbsp; 호(원뿔의 전개도)
-            <br/>
-            <label for="conearc">중심각</label>
-            <input type="number" id="conearc">˚
-            <br/>
-
-            <input id="result" type="button" value="계산하기" onClick="ConeSurfaceAreaA()">
-            <br/>
-        </div>
-    </div>
-    
 
     <script>
         
